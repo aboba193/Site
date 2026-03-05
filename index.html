@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tenet Auto Gallery</title>
+  <meta name="description" content="Tenet Auto Gallery - premium dealership with trade-in, financing, and test drives.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Teko:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-shape bg-shape-a" aria-hidden="true"></div>
+  <div class="bg-shape bg-shape-b" aria-hidden="true"></div>
+
+  <header class="header">
+    <a class="logo" href="#home">
+      <span class="logo-mark">T</span>
+      <span class="logo-text">TENET</span>
+    </a>
+
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav" id="navMenu">
+      <a href="#cars">Cars</a>
+      <a href="#services">Services</a>
+      <a href="#finance">Finance</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="#contact">Book Test Drive</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero reveal">
+      <p class="eyebrow">TENET AUTO GALLERY</p>
+      <h1>Drive The Future, Today</h1>
+      <p class="hero-copy">
+        Curated premium inventory, transparent pricing, and fast financing in one showroom.
+      </p>
+      <div class="hero-actions">
+        <a href="#cars" class="btn btn-primary">Explore Inventory</a>
+        <a href="#finance" class="btn btn-ghost">Estimate Payment</a>
+      </div>
+      <ul class="hero-stats">
+        <li><strong>260+</strong><span>Cars In Stock</span></li>
+        <li><strong>4.9/5</strong><span>Customer Rating</span></li>
+        <li><strong>24h</strong><span>Fast Approval</span></li>
+      </ul>
+    </section>
+
+    <section class="section reveal" id="cars">
+      <div class="section-head">
+        <p class="eyebrow">INVENTORY</p>
+        <h2>Featured Vehicles</h2>
+      </div>
+
+      <div class="filters" id="filters">
+        <button class="filter is-active" data-filter="all">All</button>
+        <button class="filter" data-filter="suv">SUV</button>
+        <button class="filter" data-filter="sedan">Sedan</button>
+        <button class="filter" data-filter="electric">Electric</button>
+      </div>
+
+      <div class="car-grid" id="carGrid"></div>
+    </section>
+
+    <section class="section services reveal" id="services">
+      <div class="section-head">
+        <p class="eyebrow">WHY TENET</p>
+        <h2>End-To-End Dealership Services</h2>
+      </div>
+      <div class="service-grid">
+        <article>
+          <h3>Trade-In Valuation</h3>
+          <p>Get a market-based estimate in under 15 minutes and apply it to your next vehicle.</p>
+        </article>
+        <article>
+          <h3>Instant Financing</h3>
+          <p>Partner banks with flexible terms, quick approvals, and transparent monthly payments.</p>
+        </article>
+        <article>
+          <h3>Certified Warranty</h3>
+          <p>Every certified car includes inspection reports and coverage options up to 36 months.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section finance reveal" id="finance">
+      <div class="section-head">
+        <p class="eyebrow">FINANCE</p>
+        <h2>Monthly Payment Estimator</h2>
+      </div>
+      <div class="calculator">
+        <label for="carPrice">Vehicle Price: <strong id="priceValue">$45,000</strong></label>
+        <input type="range" id="carPrice" min="20000" max="120000" value="45000" step="1000">
+
+        <label for="downPayment">Down Payment: <strong id="downValue">$9,000</strong></label>
+        <input type="range" id="downPayment" min="2000" max="40000" value="9000" step="500">
+
+        <label for="term">Term (months)</label>
+        <select id="term">
+          <option value="36">36</option>
+          <option value="48">48</option>
+          <option value="60" selected>60</option>
+          <option value="72">72</option>
+        </select>
+
+        <p class="payment">
+          Estimated monthly payment:
+          <strong id="monthlyPayment">$724</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-head">
+        <p class="eyebrow">CLIENT VOICES</p>
+        <h2>What Drivers Say</h2>
+      </div>
+      <div class="testimonial">
+        <p id="quoteText"></p>
+        <p class="author" id="quoteAuthor"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer section reveal" id="contact">
+    <div>
+      <p class="eyebrow">CONTACT</p>
+      <h2>Visit Tenet Showroom</h2>
+      <p>1148 Westline Ave, Downtown District</p>
+      <p>Mon-Sat 09:00-20:00 | +1 (555) 908-2211</p>
+    </div>
+    <form class="contact-form" id="contactForm">
+      <input type="text" id="fullName" placeholder="ФИО" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="tel" id="phone" placeholder="Номер телефона" required>
+      <button class="btn btn-primary" id="submitBtn" type="submit">Отправить заявку</button>
+      <p class="form-msg" id="formMsg" role="status"></p>
+    </form>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
